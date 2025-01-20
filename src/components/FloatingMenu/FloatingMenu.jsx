@@ -8,7 +8,7 @@ import {
 } from "react-icons/tb";
 
 const StyledFloatingMenu = styled.div`
-  width: 450px;
+  width: 400px;
   background-color: rgba(255, 255, 255, 0.2);
   position: fixed;
   bottom: 10px;
