@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Container from "../Container/Container";
 import {
   TbUser,
   TbBriefcase,
@@ -9,18 +8,16 @@ import {
 } from "react-icons/tb";
 
 const StyledFloatingMenu = styled.div`
-  width: 100%;
+  width: 450px;
   background-color: rgba(255, 255, 255, 0.2);
   position: fixed;
   bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
   border-radius: 5px;
-  backdrop-filter: blur(10px); /* Efecto de desenfoque */
-  -webkit-backdrop-filter: blur(
-    10px
-  ); /* Compatibilidad con navegadores webkit */
-  border: 1px solid rgba(255, 255, 255, 0.3); /* Borde opcional para mejor visibilidad */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 `;
 
 const StyledMenuNav = styled.nav``;
@@ -44,39 +41,37 @@ const StyledNavLink = styled.a`
 
 const FloatingMenu = () => {
   return (
-    <Container>
-      <StyledFloatingMenu>
-        <StyledMenuNav>
-          <StyledNavList>
-            <StyledNavItem>
-              <StyledNavLink href="#">
-                <TbUser />
-              </StyledNavLink>
-            </StyledNavItem>
-            <StyledNavItem>
-              <StyledNavLink href="#">
-                <TbBriefcase />
-              </StyledNavLink>
-            </StyledNavItem>
-            <StyledNavItem>
-              <StyledNavLink href="#">
-                <TbSchool />
-              </StyledNavLink>
-            </StyledNavItem>
-            <StyledNavItem>
-              <StyledNavLink href="#">
-                <TbStack2 />
-              </StyledNavLink>
-            </StyledNavItem>
-            <StyledNavItem>
-              <StyledNavLink href="#">
-                <TbMail />
-              </StyledNavLink>
-            </StyledNavItem>
-          </StyledNavList>
-        </StyledMenuNav>
-      </StyledFloatingMenu>
-    </Container>
+    <StyledFloatingMenu>
+      <StyledMenuNav>
+        <StyledNavList>
+          <StyledNavItem>
+            <StyledNavLink href="#">
+              <TbUser />
+            </StyledNavLink>
+          </StyledNavItem>
+          <StyledNavItem>
+            <StyledNavLink href="#">
+              <TbBriefcase />
+            </StyledNavLink>
+          </StyledNavItem>
+          <StyledNavItem>
+            <StyledNavLink href="#">
+              <TbSchool />
+            </StyledNavLink>
+          </StyledNavItem>
+          <StyledNavItem>
+            <StyledNavLink href="#">
+              <TbStack2 />
+            </StyledNavLink>
+          </StyledNavItem>
+          <StyledNavItem>
+            <StyledNavLink href="#">
+              <TbMail />
+            </StyledNavLink>
+          </StyledNavItem>
+        </StyledNavList>
+      </StyledMenuNav>
+    </StyledFloatingMenu>
   );
 };
 
