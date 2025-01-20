@@ -109,7 +109,7 @@ const AboutMe = () => {
         <StyledAboutHeader>
           <StyledImage
             src="https://github.com/carlosdev97.png"
-            alt="Foto Carlos López"
+            alt="Foto Carlos Lópezzz"
           />
           <StyledInfo>
             <StyledInfoTitle>Carlos López</StyledInfoTitle>
