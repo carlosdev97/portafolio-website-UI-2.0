@@ -1,10 +1,13 @@
-import styled from "styled-components";
+import { useState } from "react";
+import styled, { css, keyframes } from "styled-components";
 import {
   TbUser,
   TbBriefcase,
   TbSchool,
   TbStack2,
   TbMail,
+  TbSun,
+  TbMoon,
 } from "react-icons/tb";
 
 const StyledFloatingMenu = styled.div`
@@ -32,14 +35,50 @@ const StyledNavList = styled.ul`
 
 const StyledNavItem = styled.li`
   list-style: none;
+  font-size: 24px;
 `;
 
 const StyledNavLink = styled.a`
   color: black;
-  font-size: 24px;
+`;
+
+const rotateAnimation = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
+const StyledTbMoon = styled(TbMoon)`
+  ${(props) =>
+    props.rotate &&
+    css`
+      animation: ${rotateAnimation} 0.5s linear;
+    `}
+`;
+const StyledTbSun = styled(TbSun)`
+  ${(props) =>
+    props.rotate &&
+    css`
+      animation: ${rotateAnimation} 0.5s linear;
+    `}
 `;
 
 const FloatingMenu = () => {
+  const [darkMode, setDarkMode] = useState(false);
+  const [rotate, setRotate] = useState(false);
+
+  const handleIconClick = () => {
+    setDarkMode(!darkMode);
+    setRotate(true);
+
+    setTimeout(() => {
+      setRotate(false);
+    }, 1000);
+  };
+
   return (
     <StyledFloatingMenu>
       <StyledMenuNav>
@@ -68,6 +107,13 @@ const FloatingMenu = () => {
             <StyledNavLink href="#">
               <TbMail />
             </StyledNavLink>
+          </StyledNavItem>
+          <StyledNavItem>
+            {darkMode ? (
+              <StyledTbSun rotate={rotate} onClick={handleIconClick} />
+            ) : (
+              <StyledTbMoon rotate={rotate} onClick={handleIconClick} />
+            )}
           </StyledNavItem>
         </StyledNavList>
       </StyledMenuNav>

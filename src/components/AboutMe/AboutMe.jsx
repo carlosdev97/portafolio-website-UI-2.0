@@ -28,7 +28,6 @@ const StyledInfo = styled.div`
 
 const StyledInfoTitle = styled.h1`
   color: white;
-  font-family: "Inter", serif;
   font-weight: 800;
   font-size: 32px;
   margin: 0;
